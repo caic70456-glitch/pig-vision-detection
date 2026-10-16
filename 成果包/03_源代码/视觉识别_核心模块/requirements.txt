@@ -1,0 +1,28 @@
+# 视觉识别模块依赖
+#
+# 说明：本机环境网络受限（仅 pypi.org 与 download.pytorch.org 可达），
+# 依赖被安装到项目内的 pylibs/ 目录而非全局 site-packages，
+# 由 bootstrap.py 负责把该目录加入 sys.path。
+#
+# 安装方式：
+#   pip install --target ./pylibs -r requirements.txt
+
+# 深度学习框架（PyPI 自带 CPU-only 构建，适合无独显环境）
+torch==2.14.1
+torchvision==0.29.1
+
+# 目标检测（用于加载训练好的猪只检测模型）
+ultralytics==8.4.172
+
+# ONNX 部署（脱离 ultralytics 推理时使用）
+onnx>=1.22
+onnxruntime>=1.28
+
+# 图像处理与数值计算
+Pillow>=12.3
+numpy>=2.5
+
+# 备注：
+#   - opencv 未安装：视频抽帧改用 ffmpeg，见 README「处理视频」一节
+#   - tkinter 为 Python 标准库自带，标注工具 annotate_regions.py 依赖它
+#   - 无 GPU：全部推理在 CPU 上完成，实测猪只检测 37 ms/张

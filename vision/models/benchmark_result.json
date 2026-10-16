@@ -1,0 +1,37 @@
+{
+  "model": "pig-detector-yolov8n",
+  "dataset": "PigBench test (jonaden/pig-detection-and-tracking)",
+  "n_images": 80,
+  "latency_ms": {
+    "mean": 244.19178332512578,
+    "p50": 227.32404997805133,
+    "p95": 348.0864999990444
+  },
+  "fps_mean": 4.095141885542331,
+  "precision": 0.9447513812154696,
+  "recall": 0.8895953757225433,
+  "mAP50": 0.9396,
+  "mAP50_95": 0.6725,
+  "size_groups": {
+    "small": {
+      "gt": 26,
+      "tp": 5,
+      "recall": 0.19230769230769232
+    },
+    "medium": {
+      "gt": 816,
+      "tp": 728,
+      "recall": 0.8921568627450981
+    },
+    "large": {
+      "gt": 888,
+      "tp": 806,
+      "recall": 0.9076576576576577
+    }
+  },
+  "model_kb": {
+    "pt": 6078.103515625,
+    "onnx": 11978.26171875
+  },
+  "ort_version": "1.31.0"
+}

@@ -1,0 +1,19 @@
+{
+  "settings_version": "0.0.8",
+  "datasets_dir": "E:\\harness\\aic\\vision\\datasets",
+  "weights_dir": "weights",
+  "runs_dir": "runs",
+  "uuid": "ed2046899ca1d057baed423a8bf1e421cd586297fe7070e72c7599c0acb852c3",
+  "sync": true,
+  "api_key": "",
+  "openai_api_key": "",
+  "clearml": true,
+  "comet": true,
+  "dvc": true,
+  "mlflow": true,
+  "raytune": true,
+  "tensorboard": false,
+  "wandb": false,
+  "vscode_msg": true,
+  "openvino_msg": false
+}

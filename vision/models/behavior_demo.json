@@ -1,0 +1,36 @@
+{
+  "note": "PigBench 测试集行为分布演示（假设底部中央为食槽区域）",
+  "total_images": 80,
+  "total_pigs": 1658,
+  "feeder_region_pct_of_avg_image": {
+    "x_center": 0.5,
+    "y_top": 0.7,
+    "width_pct": 0.4,
+    "height_pct": 0.25,
+    "assumption": "食槽通常位于猪舍低处中央区域"
+  },
+  "distribution": {
+    "eating": {
+      "count": 209,
+      "pct": 12.6
+    },
+    "drinking": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "aggressive": {
+      "count": 132,
+      "pct": 8.0
+    },
+    "resting": {
+      "count": 305,
+      "pct": 18.4
+    },
+    "standing": {
+      "count": 1012,
+      "pct": 61.0
+    }
+  },
+  "method": "简化行为规则（单帧静态，基于食槽重叠度/相邻IoU/宽高比）",
+  "limitation": "静态单帧无法判断行走行为（需时序），食槽区域为假设非现场标定"
+}

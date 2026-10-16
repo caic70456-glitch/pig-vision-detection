@@ -1,0 +1,301 @@
+{
+ "image_size": [
+  800,
+  600
+ ],
+ "scenes": [
+  {
+   "name": "S1_全群采食",
+   "desc": "4 头个体集中在食槽区",
+   "image": "E:\\harness\\aic\\vision\\synthetic\\S1_全群采食.png",
+   "detections": [
+    {
+     "box": [
+      9.399999999999999,
+      428.03999999999996,
+      88.6,
+      515.76
+     ],
+     "label": "animal",
+     "score": 0.9
+    },
+    {
+     "box": [
+      75.4,
+      428.03999999999996,
+      154.6,
+      515.76
+     ],
+     "label": "animal",
+     "score": 0.9
+    },
+    {
+     "box": [
+      141.4,
+      428.03999999999996,
+      220.6,
+      515.76
+     ],
+     "label": "animal",
+     "score": 0.9
+    },
+    {
+     "box": [
+      207.4,
+      428.03999999999996,
+      286.6,
+      515.76
+     ],
+     "label": "animal",
+     "score": 0.9
+    }
+   ],
+   "expected": {
+    "0": "eating",
+    "1": "eating",
+    "2": "eating",
+    "3": "eating"
+   }
+  },
+  {
+   "name": "S2_混合行为",
+   "desc": "2 头采食、1 头饮水、2 头栏中休息",
+   "image": "E:\\harness\\aic\\vision\\synthetic\\S2_混合行为.png",
+   "detections": [
+    {
+     "box": [
+      42.4,
+      428.03999999999996,
+      121.6,
+      515.76
+     ],
+     "label": "animal",
+     "score": 0.88
+    },
+    {
+     "box": [
+      174.4,
+      428.03999999999996,
+      253.6,
+      515.76
+     ],
+     "label": "animal",
+     "score": 0.88
+    },
+    {
+     "box": [
+      578,
+      420,
+      662,
+      465
+     ],
+     "label": "animal",
+     "score": 0.87
+    },
+    {
+     "box": [
+      340,
+      315,
+      440,
+      360
+     ],
+     "label": "animal",
+     "score": 0.9
+    },
+    {
+     "box": [
+      435,
+      315,
+      525,
+      360
+     ],
+     "label": "animal",
+     "score": 0.9
+    }
+   ],
+   "expected": {
+    "0": "eating",
+    "1": "eating",
+    "2": "drinking",
+    "3": "resting",
+    "4": "resting"
+   }
+  },
+  {
+   "name": "S3_争斗重叠",
+   "desc": "两头个体框重叠明显，疑似争斗",
+   "image": "E:\\harness\\aic\\vision\\synthetic\\S3_争斗重叠.png",
+   "detections": [
+    {
+     "box": [
+      300,
+      250,
+      430,
+      330
+     ],
+     "label": "animal",
+     "score": 0.9
+    },
+    {
+     "box": [
+      350,
+      260,
+      480,
+      340
+     ],
+     "label": "animal",
+     "score": 0.9
+    },
+    {
+     "box": [
+      60,
+      80,
+      160,
+      130
+     ],
+     "label": "animal",
+     "score": 0.85
+    }
+   ],
+   "expected": {
+    "0": "aggressive",
+    "1": "aggressive",
+    "2": "resting"
+   }
+  },
+  {
+   "name": "S4_高密度拥挤",
+   "desc": "6 头密集分布，普遍相互接触",
+   "image": "E:\\harness\\aic\\vision\\synthetic\\S4_高密度拥挤.png",
+   "detections": [
+    {
+     "box": [
+      160,
+      180,
+      280,
+      250
+     ],
+     "label": "animal",
+     "score": 0.86
+    },
+    {
+     "box": [
+      290,
+      180,
+      410,
+      250
+     ],
+     "label": "animal",
+     "score": 0.86
+    },
+    {
+     "box": [
+      420,
+      180,
+      540,
+      250
+     ],
+     "label": "animal",
+     "score": 0.86
+    },
+    {
+     "box": [
+      160,
+      270,
+      280,
+      340
+     ],
+     "label": "animal",
+     "score": 0.86
+    },
+    {
+     "box": [
+      290,
+      270,
+      410,
+      340
+     ],
+     "label": "animal",
+     "score": 0.86
+    },
+    {
+     "box": [
+      420,
+      270,
+      540,
+      340
+     ],
+     "label": "animal",
+     "score": 0.86
+    }
+   ],
+   "expected": {
+    "0": "resting",
+    "1": "resting",
+    "2": "resting",
+    "3": "resting",
+    "4": "resting",
+    "5": "resting"
+   }
+  },
+  {
+   "name": "S5_空栏负样本",
+   "desc": "栏舍内无个体",
+   "image": "E:\\harness\\aic\\vision\\synthetic\\S5_空栏负样本.png",
+   "detections": [],
+   "expected": {}
+  },
+  {
+   "name": "S6_有人作业",
+   "desc": "3 头休息，1 名人员在栏内",
+   "image": "E:\\harness\\aic\\vision\\synthetic\\S6_有人作业.png",
+   "detections": [
+    {
+     "box": [
+      280,
+      280,
+      400,
+      325
+     ],
+     "label": "animal",
+     "score": 0.88
+    },
+    {
+     "box": [
+      400,
+      280,
+      520,
+      325
+     ],
+     "label": "animal",
+     "score": 0.88
+    },
+    {
+     "box": [
+      330,
+      240,
+      450,
+      285
+     ],
+     "label": "animal",
+     "score": 0.88
+    },
+    {
+     "box": [
+      620,
+      120,
+      700,
+      300
+     ],
+     "label": "person",
+     "score": 0.93
+    }
+   ],
+   "expected": {
+    "0": "resting",
+    "1": "resting",
+    "2": "resting"
+   }
+  }
+ ]
+}

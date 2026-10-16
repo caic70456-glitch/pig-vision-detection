@@ -1,0 +1,1025 @@
+{
+ "scene": {
+  "animal_count": 21,
+  "person_count": 0,
+  "image_size": [
+   640,
+   360
+  ],
+  "mean_area_ratio": 0.0107,
+  "area_cv": 0.3376,
+  "mean_aspect": 0.96,
+  "crowding": 0.857,
+  "region_counts": {
+   "feeder": 4,
+   "drinker": 3
+  },
+  "layout_hint": "设施区域由布局先验推断（食槽左下、饮水器右下、保温区左上），未经过人工标定。真实部署应改为首次部署时人工框选并保存配置。",
+  "regions": [
+   {
+    "name": "feeder",
+    "label_cn": "食槽（推断）",
+    "box": [
+     12.8,
+     198.0,
+     224.0,
+     352.8
+    ]
+   },
+   {
+    "name": "drinker",
+    "label_cn": "饮水器（推断）",
+    "box": [
+     435.2,
+     198.0,
+     627.2,
+     352.8
+    ]
+   },
+   {
+    "name": "creep",
+    "label_cn": "保温区（推断）",
+    "box": [
+     12.8,
+     7.2,
+     192.0,
+     126.0
+    ]
+   }
+  ],
+  "animals": [
+   {
+    "index": 0,
+    "box": [
+     297.9,
+     8.1,
+     341.4,
+     71.8
+    ],
+    "center": [
+     319.7,
+     40.0
+    ],
+    "area_ratio": 0.012,
+    "aspect": 0.683,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.147
+   },
+   {
+    "index": 1,
+    "box": [
+     388.4,
+     299.2,
+     446.9,
+     354.2
+    ],
+    "center": [
+     417.6,
+     326.7
+    ],
+    "area_ratio": 0.0139,
+    "aspect": 1.063,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.195,
+     "creep": 0.0
+    },
+    "touch_count": 0,
+    "max_iou": 0.045
+   },
+   {
+    "index": 2,
+    "box": [
+     337.6,
+     21.2,
+     366.9,
+     75.5
+    ],
+    "center": [
+     352.2,
+     48.4
+    ],
+    "area_ratio": 0.0069,
+    "aspect": 0.538,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.141
+   },
+   {
+    "index": 3,
+    "box": [
+     153.5,
+     302.5,
+     218.0,
+     345.0
+    ],
+    "center": [
+     185.8,
+     323.7
+    ],
+    "area_ratio": 0.0119,
+    "aspect": 1.517,
+    "in_regions": [
+     "feeder"
+    ],
+    "region_overlap": {
+     "feeder": 1.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 0,
+    "max_iou": 0.0
+   },
+   {
+    "index": 4,
+    "box": [
+     261.2,
+     30.1,
+     314.9,
+     81.6
+    ],
+    "center": [
+     288.1,
+     55.9
+    ],
+    "area_ratio": 0.012,
+    "aspect": 1.043,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.147
+   },
+   {
+    "index": 5,
+    "box": [
+     182.6,
+     40.0,
+     234.4,
+     74.5
+    ],
+    "center": [
+     208.5,
+     57.2
+    ],
+    "area_ratio": 0.0078,
+    "aspect": 1.503,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.181
+    },
+    "touch_count": 2,
+    "max_iou": 0.198
+   },
+   {
+    "index": 6,
+    "box": [
+     292.3,
+     96.2,
+     351.5,
+     166.2
+    ],
+    "center": [
+     321.9,
+     131.2
+    ],
+    "area_ratio": 0.018,
+    "aspect": 0.845,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 0,
+    "max_iou": 0.044
+   },
+   {
+    "index": 7,
+    "box": [
+     174.6,
+     195.4,
+     249.3,
+     223.7
+    ],
+    "center": [
+     212.0,
+     209.6
+    ],
+    "area_ratio": 0.0092,
+    "aspect": 2.639,
+    "in_regions": [
+     "feeder"
+    ],
+    "region_overlap": {
+     "feeder": 0.601,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.068
+   },
+   {
+    "index": 8,
+    "box": [
+     431.5,
+     77.6,
+     469.8,
+     157.0
+    ],
+    "center": [
+     450.6,
+     117.3
+    ],
+    "area_ratio": 0.0132,
+    "aspect": 0.482,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 0,
+    "max_iou": 0.048
+   },
+   {
+    "index": 9,
+    "box": [
+     400.6,
+     41.5,
+     442.0,
+     71.6
+    ],
+    "center": [
+     421.3,
+     56.5
+    ],
+    "area_ratio": 0.0054,
+    "aspect": 1.379,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 0,
+    "max_iou": 0.025
+   },
+   {
+    "index": 10,
+    "box": [
+     440.6,
+     254.8,
+     468.1,
+     336.9
+    ],
+    "center": [
+     454.3,
+     295.8
+    ],
+    "area_ratio": 0.0098,
+    "aspect": 0.334,
+    "in_regions": [
+     "drinker"
+    ],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 1.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.334
+   },
+   {
+    "index": 11,
+    "box": [
+     330.5,
+     151.3,
+     382.8,
+     214.7
+    ],
+    "center": [
+     356.7,
+     183.0
+    ],
+    "area_ratio": 0.0144,
+    "aspect": 0.824,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 0,
+    "max_iou": 0.044
+   },
+   {
+    "index": 12,
+    "box": [
+     441.3,
+     283.2,
+     492.4,
+     351.3
+    ],
+    "center": [
+     466.9,
+     317.3
+    ],
+    "area_ratio": 0.0151,
+    "aspect": 0.751,
+    "in_regions": [
+     "drinker"
+    ],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 1.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.334
+   },
+   {
+    "index": 13,
+    "box": [
+     398.9,
+     225.5,
+     482.5,
+     264.0
+    ],
+    "center": [
+     440.7,
+     244.7
+    ],
+    "area_ratio": 0.0139,
+    "aspect": 2.173,
+    "in_regions": [
+     "drinker"
+    ],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.566,
+     "creep": 0.0
+    },
+    "touch_count": 0,
+    "max_iou": 0.048
+   },
+   {
+    "index": 14,
+    "box": [
+     428.0,
+     148.3,
+     458.5,
+     216.8
+    ],
+    "center": [
+     443.3,
+     182.5
+    ],
+    "area_ratio": 0.009,
+    "aspect": 0.445,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.21,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.157
+   },
+   {
+    "index": 15,
+    "box": [
+     356.6,
+     28.2,
+     403.3,
+     72.3
+    ],
+    "center": [
+     379.9,
+     50.3
+    ],
+    "area_ratio": 0.0089,
+    "aspect": 1.06,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.141
+   },
+   {
+    "index": 16,
+    "box": [
+     228.6,
+     25.5,
+     255.8,
+     71.2
+    ],
+    "center": [
+     242.2,
+     48.4
+    ],
+    "area_ratio": 0.0054,
+    "aspect": 0.597,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 2,
+    "max_iou": 0.12
+   },
+   {
+    "index": 17,
+    "box": [
+     187.0,
+     4.3,
+     243.1,
+     56.4
+    ],
+    "center": [
+     215.0,
+     30.4
+    ],
+    "area_ratio": 0.0127,
+    "aspect": 1.076,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.0,
+     "creep": 0.084
+    },
+    "touch_count": 2,
+    "max_iou": 0.198
+   },
+   {
+    "index": 18,
+    "box": [
+     167.8,
+     234.8,
+     189.5,
+     283.9
+    ],
+    "center": [
+     178.7,
+     259.3
+    ],
+    "area_ratio": 0.0046,
+    "aspect": 0.442,
+    "in_regions": [
+     "feeder"
+    ],
+    "region_overlap": {
+     "feeder": 1.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.322
+   },
+   {
+    "index": 19,
+    "box": [
+     150.2,
+     200.2,
+     189.3,
+     284.0
+    ],
+    "center": [
+     169.8,
+     242.1
+    ],
+    "area_ratio": 0.0142,
+    "aspect": 0.467,
+    "in_regions": [
+     "feeder"
+    ],
+    "region_overlap": {
+     "feeder": 1.0,
+     "drinker": 0.0,
+     "creep": 0.0
+    },
+    "touch_count": 2,
+    "max_iou": 0.322
+   },
+   {
+    "index": 20,
+    "box": [
+     450.8,
+     152.6,
+     472.2,
+     225.7
+    ],
+    "center": [
+     461.5,
+     189.2
+    ],
+    "area_ratio": 0.0068,
+    "aspect": 0.293,
+    "in_regions": [],
+    "region_overlap": {
+     "feeder": 0.0,
+     "drinker": 0.379,
+     "creep": 0.0
+    },
+    "touch_count": 1,
+    "max_iou": 0.157
+   }
+  ]
+ },
+ "behavior": {
+  "verdicts": [
+   {
+    "index": 0,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.388,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.147 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.6829,
+     "touch_count": 1.0,
+     "max_iou": 0.1467
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 1,
+    "behavior": "standing",
+    "behavior_cn": "站立",
+    "confidence": 0.4,
+    "rules_fired": [
+     "R-pose: 无时序信息，仅能依据静止与重叠关系粗判"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.1946,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 1.0631,
+     "touch_count": 0.0,
+     "max_iou": 0.0453
+    },
+    "note": "缺少跨帧信息，站/走判定不可靠"
+   },
+   {
+    "index": 2,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.385,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.141 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.5382,
+     "touch_count": 1.0,
+     "max_iou": 0.1414
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 3,
+    "behavior": "eating",
+    "behavior_cn": "采食",
+    "confidence": 1.0,
+    "rules_fired": [
+     "R-eat: 与食槽区域重叠 1.00 >= 0.35（设施锚定判据）"
+    ],
+    "features_used": {
+     "feeder_overlap": 1.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 1.5169,
+     "touch_count": 0.0,
+     "max_iou": 0.0
+    },
+    "note": ""
+   },
+   {
+    "index": 4,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.388,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.147 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 1.0433,
+     "touch_count": 1.0,
+     "max_iou": 0.1467
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 5,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.419,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.198 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 1.503,
+     "touch_count": 2.0,
+     "max_iou": 0.1984
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 6,
+    "behavior": "standing",
+    "behavior_cn": "站立",
+    "confidence": 0.4,
+    "rules_fired": [
+     "R-pose: 无时序信息，仅能依据静止与重叠关系粗判"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.8452,
+     "touch_count": 0.0,
+     "max_iou": 0.0439
+    },
+    "note": "缺少跨帧信息，站/走判定不可靠"
+   },
+   {
+    "index": 7,
+    "behavior": "eating",
+    "behavior_cn": "采食",
+    "confidence": 0.82,
+    "rules_fired": [
+     "R-eat: 与食槽区域重叠 0.60 >= 0.35（设施锚定判据）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.6005,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 2.6389,
+     "touch_count": 1.0,
+     "max_iou": 0.0684
+    },
+    "note": ""
+   },
+   {
+    "index": 8,
+    "behavior": "standing",
+    "behavior_cn": "站立",
+    "confidence": 0.4,
+    "rules_fired": [
+     "R-pose: 无时序信息，仅能依据静止与重叠关系粗判"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.4825,
+     "touch_count": 0.0,
+     "max_iou": 0.048
+    },
+    "note": "缺少跨帧信息，站/走判定不可靠"
+   },
+   {
+    "index": 9,
+    "behavior": "standing",
+    "behavior_cn": "站立",
+    "confidence": 0.4,
+    "rules_fired": [
+     "R-pose: 无时序信息，仅能依据静止与重叠关系粗判"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 1.3793,
+     "touch_count": 0.0,
+     "max_iou": 0.0252
+    },
+    "note": "缺少跨帧信息，站/走判定不可靠"
+   },
+   {
+    "index": 10,
+    "behavior": "drinking",
+    "behavior_cn": "饮水",
+    "confidence": 1.0,
+    "rules_fired": [
+     "R-drink: 与饮水器区域重叠 1.00 >= 0.35（设施锚定判据）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 1.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.3344,
+     "touch_count": 1.0,
+     "max_iou": 0.3337
+    },
+    "note": ""
+   },
+   {
+    "index": 11,
+    "behavior": "standing",
+    "behavior_cn": "站立",
+    "confidence": 0.4,
+    "rules_fired": [
+     "R-pose: 无时序信息，仅能依据静止与重叠关系粗判"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.8236,
+     "touch_count": 0.0,
+     "max_iou": 0.0439
+    },
+    "note": "缺少跨帧信息，站/走判定不可靠"
+   },
+   {
+    "index": 12,
+    "behavior": "drinking",
+    "behavior_cn": "饮水",
+    "confidence": 1.0,
+    "rules_fired": [
+     "R-drink: 与饮水器区域重叠 1.00 >= 0.35（设施锚定判据）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 1.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.751,
+     "touch_count": 1.0,
+     "max_iou": 0.3337
+    },
+    "note": ""
+   },
+   {
+    "index": 13,
+    "behavior": "drinking",
+    "behavior_cn": "饮水",
+    "confidence": 0.805,
+    "rules_fired": [
+     "R-drink: 与饮水器区域重叠 0.57 >= 0.35（设施锚定判据）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.5657,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 2.1733,
+     "touch_count": 0.0,
+     "max_iou": 0.0483
+    },
+    "note": ""
+   },
+   {
+    "index": 14,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.394,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.157 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.2098,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.4448,
+     "touch_count": 1.0,
+     "max_iou": 0.1571
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 15,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.385,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.141 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 1.0603,
+     "touch_count": 1.0,
+     "max_iou": 0.1414
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 16,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.372,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.120 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.5966,
+     "touch_count": 2.0,
+     "max_iou": 0.1205
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 17,
+    "behavior": "aggressive",
+    "behavior_cn": "争斗",
+    "confidence": 0.419,
+    "rules_fired": [
+     "R-fight: 与相邻个体 IoU=0.198 >= 0.12（无时序信息，仅空间重叠）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 1.0758,
+     "touch_count": 2.0,
+     "max_iou": 0.1984
+    },
+    "note": "仅凭单帧重叠判定，可能与并排休息混淆，建议结合视频确认"
+   },
+   {
+    "index": 18,
+    "behavior": "eating",
+    "behavior_cn": "采食",
+    "confidence": 1.0,
+    "rules_fired": [
+     "R-eat: 与食槽区域重叠 1.00 >= 0.35（设施锚定判据）",
+     "提示：与相邻个体框重叠 IoU=0.322，在高密度采食时属正常现象，不据此判定争斗"
+    ],
+    "features_used": {
+     "feeder_overlap": 1.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.4417,
+     "touch_count": 1.0,
+     "max_iou": 0.3215
+    },
+    "note": ""
+   },
+   {
+    "index": 19,
+    "behavior": "eating",
+    "behavior_cn": "采食",
+    "confidence": 1.0,
+    "rules_fired": [
+     "R-eat: 与食槽区域重叠 1.00 >= 0.35（设施锚定判据）",
+     "提示：与相邻个体框重叠 IoU=0.322，在高密度采食时属正常现象，不据此判定争斗"
+    ],
+    "features_used": {
+     "feeder_overlap": 1.0,
+     "drinker_overlap": 0.0,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.4671,
+     "touch_count": 2.0,
+     "max_iou": 0.3215
+    },
+    "note": ""
+   },
+   {
+    "index": 20,
+    "behavior": "drinking",
+    "behavior_cn": "饮水",
+    "confidence": 0.721,
+    "rules_fired": [
+     "R-drink: 与饮水器区域重叠 0.38 >= 0.35（设施锚定判据）"
+    ],
+    "features_used": {
+     "feeder_overlap": 0.0,
+     "drinker_overlap": 0.3791,
+     "speed": 0.0,
+     "displacement": 0.0,
+     "area_change": 0.0,
+     "aspect": 0.293,
+     "touch_count": 1.0,
+     "max_iou": 0.1571
+    },
+    "note": ""
+   }
+  ],
+  "distribution": {
+   "aggressive": 8,
+   "standing": 5,
+   "eating": 4,
+   "drinking": 4
+  },
+  "distribution_pct": {
+   "aggressive": 38.1,
+   "standing": 23.8,
+   "eating": 19.0,
+   "drinking": 19.0
+  },
+  "conflict_pairs": [],
+  "temporal_available": false,
+  "warnings": [
+   "本次为单帧分析：无法区分「站立」与「行走」，也无法可靠区分「争斗」与「并排休息」。要获得完整行为识别，请分析连续多帧或视频。"
+  ]
+ },
+ "health": {
+  "level": "insufficient",
+  "level_cn": "数据不足",
+  "score": 0.0,
+  "signals": [],
+  "suggestions": [],
+  "baseline_used": {
+   "eating": 10.0,
+   "drinking": 4.0,
+   "resting": 65.0,
+   "standing": 8.0,
+   "walking": 12.0,
+   "aggressive": 1.0
+  },
+  "notes": [
+   "本次为单帧分析，行为分布不具统计意义，评估结果仅供参考。健康评估需要基于连续视频累计的行为时间占比。"
+  ]
+ },
+ "detector": {
+  "backend": "ultralytics-yolo:pig-detector-yolov8n.pt",
+  "can_detect_pig": true,
+  "approximate": false,
+  "approx_note": "",
+  "image": "danuma_1262.jpg",
+  "warnings": []
+ },
+ "narrative": "本画面共呈现 21 个目标个体。\n行为构成：争斗 38%、站立 24%、采食 19%、饮水 19%。\n设施区占用：食槽 4 个、饮水器 3 个。\n\n健康/福利评估：数据不足（评分 0/100）。",
+ "narrative_source": "template",
+ "template_narrative": "本画面共呈现 21 个目标个体。\n行为构成：争斗 38%、站立 24%、采食 19%、饮水 19%。\n设施区占用：食槽 4 个、饮水器 3 个。\n\n健康/福利评估：数据不足（评分 0/100）。",
+ "llm_error": null,
+ "disclaimer": "本报告由视觉分析自动生成，仅反映画面中的行为分布，不构成疾病诊断或用药依据。异常情况请由执业兽医现场检查。",
+ "pipeline_warnings": []
+}

@@ -1,0 +1,34 @@
+# 大文件 / 不入库
+vision/data/
+pylibs
+pylibs/
+pylibs/**
+relateanything/
+vision/models/hub/
+vision/models/torch/
+vision/web/cache/
+vision/models/_pretrained_coco_yolov8n.pt
+*.zip
+*.rar
+*.7z
+~$*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 运行时产物
+pigfarm.db
+*.db-journal
+edge/*.db
+
+# 系统
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 临时脚本
+_v*.py

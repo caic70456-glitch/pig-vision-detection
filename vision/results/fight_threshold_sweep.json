@@ -1,0 +1,61 @@
+{
+ "note": "标定区域下的争斗阈值扫描；数据为真实猪舍图片，检测器为自训模型",
+ "n_images": 12,
+ "n_targets": 236,
+ "sweep": [
+  {
+   "fight_iou": 0.12,
+   "aggressive": 48,
+   "aggressive_pct": 20.3,
+   "eating_pct": 30.5,
+   "standing_pct": 33.5,
+   "resting_pct": 4.7,
+   "drinking_pct": 11.0
+  },
+  {
+   "fight_iou": 0.18,
+   "aggressive": 30,
+   "aggressive_pct": 12.7,
+   "eating_pct": 30.5,
+   "standing_pct": 40.3,
+   "resting_pct": 5.5,
+   "drinking_pct": 11.0
+  },
+  {
+   "fight_iou": 0.25,
+   "aggressive": 18,
+   "aggressive_pct": 7.6,
+   "eating_pct": 30.5,
+   "standing_pct": 44.5,
+   "resting_pct": 6.4,
+   "drinking_pct": 11.0
+  },
+  {
+   "fight_iou": 0.35,
+   "aggressive": 9,
+   "aggressive_pct": 3.8,
+   "eating_pct": 30.5,
+   "standing_pct": 47.9,
+   "resting_pct": 6.8,
+   "drinking_pct": 11.0
+  },
+  {
+   "fight_iou": 0.45,
+   "aggressive": 4,
+   "aggressive_pct": 1.7,
+   "eating_pct": 30.5,
+   "standing_pct": 50.0,
+   "resting_pct": 6.8,
+   "drinking_pct": 11.0
+  },
+  {
+   "fight_iou": 0.6,
+   "aggressive": 2,
+   "aggressive_pct": 0.8,
+   "eating_pct": 30.5,
+   "standing_pct": 50.8,
+   "resting_pct": 6.8,
+   "drinking_pct": 11.0
+  }
+ ]
+}

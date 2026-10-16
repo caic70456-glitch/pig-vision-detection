@@ -1,0 +1,100 @@
+{
+ "dataset": "synthetic（合成场景，仅验证流程正确性）",
+ "n_targets": 21,
+ "n_correct": 21,
+ "accuracy": 1.0,
+ "macro_f1": 1.0,
+ "per_class": {
+  "aggressive": {
+   "tp": 2,
+   "fp": 0,
+   "fn": 0
+  },
+  "drinking": {
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  "eating": {
+   "tp": 6,
+   "fp": 0,
+   "fn": 0
+  },
+  "resting": {
+   "tp": 12,
+   "fp": 0,
+   "fn": 0
+  }
+ },
+ "scenes": [
+  {
+   "scene": "S1_全群采食",
+   "targets": 4,
+   "correct": 4,
+   "accuracy": 1.0,
+   "details": [
+    "#1:采食✓",
+    "#2:采食✓",
+    "#3:采食✓",
+    "#4:采食✓"
+   ]
+  },
+  {
+   "scene": "S2_混合行为",
+   "targets": 5,
+   "correct": 5,
+   "accuracy": 1.0,
+   "details": [
+    "#1:采食✓",
+    "#2:采食✓",
+    "#3:饮水✓",
+    "#4:休息✓",
+    "#5:休息✓"
+   ]
+  },
+  {
+   "scene": "S3_争斗重叠",
+   "targets": 3,
+   "correct": 3,
+   "accuracy": 1.0,
+   "details": [
+    "#1:争斗✓",
+    "#2:争斗✓",
+    "#3:休息✓"
+   ]
+  },
+  {
+   "scene": "S4_高密度拥挤",
+   "targets": 6,
+   "correct": 6,
+   "accuracy": 1.0,
+   "details": [
+    "#1:休息✓",
+    "#2:休息✓",
+    "#3:休息✓",
+    "#4:休息✓",
+    "#5:休息✓",
+    "#6:休息✓"
+   ]
+  },
+  {
+   "scene": "S5_空栏负样本",
+   "targets": 0,
+   "correct": 0,
+   "accuracy": 0.0,
+   "details": []
+  },
+  {
+   "scene": "S6_有人作业",
+   "targets": 3,
+   "correct": 3,
+   "accuracy": 1.0,
+   "details": [
+    "#1:休息✓",
+    "#2:休息✓",
+    "#3:休息✓"
+   ]
+  }
+ ],
+ "disclaimer": "合成图像上的成绩只反映行为规则层的逻辑正确性，不代表真实栏舍识别精度。真实精度必须在真实猪舍图像/视频上评测。"
+}

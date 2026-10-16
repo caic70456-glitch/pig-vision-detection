@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猪只视觉检测 · AI+农业（赛题一）</title>
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.2/dist/ort.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", "Microsoft YaHei", sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 24px; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .sub { color: #94a3b8; font-size: 13px; margin-bottom: 20px; }
+  .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  button { background: #22c55e; color: #052e16; border: none; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  button:disabled { background: #334155; color: #64748b; cursor: wait; }
+  .conf-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #94a3b8; }
+  input[type=range] { width: 140px; }
+  #status { font-size: 13px; color: #fbbf24; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+  .stat { background: #0f172a; border-radius: 8px; padding: 12px; text-align: center; }
+  .stat .v { font-size: 24px; font-weight: 700; color: #4ade80; }
+  .stat .k { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+  #canvasBox { text-align: center; }
+  canvas { max-width: 100%; border-radius: 8px; background: #000; }
+  .drop { border: 2px dashed #334155; border-radius: 12px; padding: 32px; text-align: center; color: #64748b; cursor: pointer; transition: border-color .2s; }
+  .drop:hover, .drop.over { border-color: #22c55e; color: #4ade80; }
+  footer { color: #475569; font-size: 12px; text-align: center; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🐷 猪只视觉检测系统</h1>
+  <div class="sub">第八届全球校园人工智能算法精英大赛 · AI农业算法主题赛 · 赛题一（农业视觉目标检测与识别）<br>
+  模型：YOLOv8n 自训（PigBench）→ INT8 动态量化（3.2MB） · 浏览器端推理 · 无需服务器</div>
+
+  <div class="card">
+    <div class="row">
+      <button id="loadBtn" disabled>模型加载中…</button>
+      <label class="conf-row">置信度阈值 <input type="range" id="conf" min="0.05" max="0.9" step="0.05" value="0.25"> <span id="confVal">0.25</span></label>
+      <span id="status"></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="drop" id="drop">点击或拖拽图片到这里（猪只照片）</div>
+    <input type="file" id="file" accept="image/*" hidden>
+  </div>
+
+  <div class="card stats" id="stats" style="display:none">
+    <div class="stat"><div class="v" id="sCount">-</div><div class="k">检测猪只数</div></div>
+    <div class="stat"><div class="v" id="sConf">-</div><div class="k">平均置信度</div></div>
+    <div class="stat"><div class="v" id="sTime">-</div><div class="k">推理耗时 (ms)</div></div>
+    <div class="stat"><div class="v" id="sSize">-</div><div class="k">图片尺寸</div></div>
+  </div>
+
+  <div class="card" id="canvasBox" style="display:none"><canvas id="cv"></canvas></div>
+
+  <footer>
+    边缘端完整链路（行为分析 / SQLite 落库 / 传感器联动）见仓库 edge/ 目录 ·
+    精度指标：Precision 0.9448 / Recall 0.8896 / mAP50 0.9396（PigBench 测试集实测）
+  </footer>
+</div>
+
+<script>
+const MODEL_URL = 'model.onnx';
+const INPUT = 640;
+let session = null;
+
+const $ = id => document.getElementById(id);
+const status = t => $('status').textContent = t;
+
+// ---------- 模型加载 ----------
+(async () => {
+  try {
+    session = await ort.InferenceSession.create(MODEL_URL, { executionProviders: ['wasm'] });
+    $('loadBtn').disabled = false;
+    $('loadBtn').textContent = '模型已就绪 ✓';
+    status('可以上传图片了');
+  } catch (e) {
+    status('模型加载失败: ' + e.message);
+    $('loadBtn').textContent = '模型加载失败';
+  }
+})();
+
+// ---------- 交互 ----------
+$('drop').onclick = () => $('file').click();
+$('drop').ondragover = e => { e.preventDefault(); $('drop').classList.add('over'); };
+$('drop').ondragleave = () => $('drop').classList.remove('over');
+$('drop').ondrop = e => { e.preventDefault(); $('drop').classList.remove('over'); if (e.dataTransfer.files[0]) handle(e.dataTransfer.files[0]); };
+$('file').onchange = e => { if (e.target.files[0]) handle(e.target.files[0]); };
+$('conf').oninput = () => $('confVal').textContent = $('conf').value;
+
+// ---------- letterbox 预处理 ----------
+function letterbox(img) {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = INPUT;
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#727272'; ctx.fillRect(0, 0, INPUT, INPUT);
+  const scale = Math.min(INPUT / img.width, INPUT / img.height);
+  const nw = Math.round(img.width * scale), nh = Math.round(img.height * scale);
+  const dx = Math.floor((INPUT - nw) / 2), dy = Math.floor((INPUT - nh) / 2);
+  ctx.drawImage(img, dx, dy, nw, nh);
+  const data = ctx.getImageData(0, 0, INPUT, INPUT).data;
+  const f32 = new Float32Array(3 * INPUT * INPUT);
+  for (let i = 0; i < INPUT * INPUT; i++) {
+    f32[i] = data[i * 4] / 255;                       // R
+    f32[INPUT * INPUT + i] = data[i * 4 + 1] / 255;   // G
+    f32[2 * INPUT * INPUT + i] = data[i * 4 + 2] / 255; // B
+  }
+  return { tensor: new ort.Tensor('float32', f32, [1, 3, INPUT, INPUT]), scale, dx, dy };
+}
+
+// ---------- NMS ----------
+function iou(a, b) {
+  const x1 = Math.max(a[0], b[0]), y1 = Math.max(a[1], b[1]);
+  const x2 = Math.min(a[2], b[2]), y2 = Math.min(a[3], b[3]);
+  const inter = Math.max(0, x2 - x1) * Math.max(0, y2 - y1);
+  return inter / ((a[2]-a[0])*(a[3]-a[1]) + (b[2]-b[0])*(b[3]-b[1]) - inter + 1e-9);
+}
+function nms(boxes, thr = 0.45) {
+  boxes.sort((a, b) => b[4] - a[4]);
+  const keep = [];
+  while (boxes.length) {
+    const cur = boxes.shift();
+    keep.push(cur);
+    boxes = boxes.filter(b => iou(cur, b) < thr);
+  }
+  return keep;
+}
+
+// ---------- 主流程 ----------
+async function handle(file) {
+  if (!session) { status('模型还没加载完，稍等…'); return; }
+  const img = new Image();
+  img.onload = async () => {
+    status('推理中…');
+    const { tensor, scale, dx, dy } = letterbox(img);
+    const t0 = performance.now();
+    const out = await session.run({ images: tensor });
+    const ms = performance.now() - t0;
+
+    const d = out.output0.data, N = 8400, C = 5;
+    const confThr = parseFloat($('conf').value);
+    let boxes = [];
+    for (let i = 0; i < N; i++) {
+      const score = d[4 * N + i];
+      if (score < confThr) continue;
+      const cx = d[i], cy = d[N + i], w = d[2 * N + i], h = d[3 * N + i];
+      // 640 空间 → 原图空间
+      const x1 = (cx - w/2 - dx) / scale, y1 = (cy - h/2 - dy) / scale;
+      const x2 = (cx + w/2 - dx) / scale, y2 = (cy + h/2 - dy) / scale;
+      boxes.push([Math.max(0,x1), Math.max(0,y1), Math.min(img.width,x2), Math.min(img.height,y2), score]);
+    }
+    boxes = nms(boxes);
+
+    // 绘制
+    const cv = $('cv'), ctx = cv.getContext('2d');
+    cv.width = img.width; cv.height = img.height;
+    ctx.drawImage(img, 0, 0);
+    ctx.lineWidth = Math.max(2, img.width / 400);
+    ctx.font = `${Math.max(14, img.width/50)}px sans-serif`;
+    for (const [x1,y1,x2,y2,s] of boxes) {
+      ctx.strokeStyle = '#22c55e';
+      ctx.strokeRect(x1, y1, x2-x1, y2-y1);
+      const label = `pig ${s.toFixed(2)}`;
+      const tw = ctx.measureText(label).width;
+      ctx.fillStyle = '#22c55e';
+      ctx.fillRect(x1, y1 - 1.4*parseInt(ctx.font), tw + 8, 1.4*parseInt(ctx.font));
+      ctx.fillStyle = '#052e16';
+      ctx.fillText(label, x1 + 4, y1 - 4);
+    }
+
+    // 统计
+    const avg = boxes.length ? boxes.reduce((a,b)=>a+b[4],0)/boxes.length : 0;
+    $('sCount').textContent = boxes.length;
+    $('sConf').textContent = avg.toFixed(3);
+    $('sTime').textContent = ms.toFixed(0);
+    $('sSize').textContent = `${img.width}×${img.height}`;
+    $('stats').style.display = 'grid';
+    $('canvasBox').style.display = 'block';
+    status(`完成：检出 ${boxes.length} 头猪`);
+    URL.revokeObjectURL(img.src);
+  };
+  img.src = URL.createObjectURL(file);
+}
+</script>
+</body>
+</html>

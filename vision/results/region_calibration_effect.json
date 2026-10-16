@@ -1,0 +1,155 @@
+{
+ "note": "同一检测结果下，仅切换设施区域来源做对比。演示用的标定配置为目视估计，真实部署应在图上重新框选。",
+ "config": "E:\\harness\\aic\\vision\\data\\pigdetect\\extract\\test\\regions.json",
+ "regions_calibrated": {
+  "feeder": 1,
+  "drinker": 1,
+  "creep": 0,
+  "pen": 1
+ },
+ "n_images": 8,
+ "n_targets": 152,
+ "inferred_pct": {
+  "aggressive": 4.6,
+  "drinking": 13.2,
+  "standing": 66.4,
+  "eating": 7.9,
+  "resting": 7.9
+ },
+ "calibrated_pct": {
+  "eating": 32.2,
+  "drinking": 9.2,
+  "standing": 51.3,
+  "resting": 5.9,
+  "aggressive": 1.3
+ },
+ "per_image": [
+  {
+   "image": "danuma_1259.jpg",
+   "n_pigs": 20,
+   "inferred": {
+    "aggressive": 3,
+    "drinking": 3,
+    "standing": 13,
+    "eating": 1
+   },
+   "calibrated": {
+    "eating": 7,
+    "drinking": 2,
+    "standing": 11
+   }
+  },
+  {
+   "image": "danuma_1262.jpg",
+   "n_pigs": 21,
+   "inferred": {
+    "standing": 12,
+    "eating": 4,
+    "resting": 1,
+    "drinking": 4
+   },
+   "calibrated": {
+    "eating": 8,
+    "standing": 8,
+    "resting": 2,
+    "drinking": 3
+   }
+  },
+  {
+   "image": "danuma_1265.jpg",
+   "n_pigs": 19,
+   "inferred": {
+    "standing": 15,
+    "drinking": 2,
+    "resting": 2
+   },
+   "calibrated": {
+    "standing": 10,
+    "eating": 6,
+    "drinking": 2,
+    "resting": 1
+   }
+  },
+  {
+   "image": "danuma_1268.jpg",
+   "n_pigs": 17,
+   "inferred": {
+    "standing": 13,
+    "drinking": 3,
+    "resting": 1
+   },
+   "calibrated": {
+    "standing": 8,
+    "eating": 5,
+    "drinking": 3,
+    "resting": 1
+   }
+  },
+  {
+   "image": "danuma_1271.jpg",
+   "n_pigs": 19,
+   "inferred": {
+    "standing": 11,
+    "drinking": 2,
+    "resting": 2,
+    "aggressive": 2,
+    "eating": 2
+   },
+   "calibrated": {
+    "eating": 6,
+    "drinking": 1,
+    "standing": 11,
+    "resting": 1
+   }
+  },
+  {
+   "image": "danuma_1274.jpg",
+   "n_pigs": 17,
+   "inferred": {
+    "standing": 12,
+    "aggressive": 2,
+    "resting": 1,
+    "drinking": 1,
+    "eating": 1
+   },
+   "calibrated": {
+    "standing": 9,
+    "eating": 5,
+    "aggressive": 2,
+    "resting": 1
+   }
+  },
+  {
+   "image": "danuma_1277.jpg",
+   "n_pigs": 19,
+   "inferred": {
+    "standing": 12,
+    "drinking": 2,
+    "resting": 3,
+    "eating": 2
+   },
+   "calibrated": {
+    "eating": 6,
+    "standing": 11,
+    "drinking": 1,
+    "resting": 1
+   }
+  },
+  {
+   "image": "danuma_1280.jpg",
+   "n_pigs": 20,
+   "inferred": {
+    "standing": 13,
+    "eating": 2,
+    "drinking": 3,
+    "resting": 2
+   },
+   "calibrated": {
+    "standing": 10,
+    "eating": 6,
+    "drinking": 2,
+    "resting": 2
+   }
+  }
+ ]
+}

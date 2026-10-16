@@ -1,0 +1,11 @@
+# PigDetect（PigBench）数据集配置 —— 单类猪只检测
+# 来源：jonaden/pig-detection-and-tracking（HuggingFace, CC-BY-4.0）
+# 论文：Benchmarking pig detection and tracking under diverse and challenging conditions
+#       Computers and Electronics in Agriculture, 2025, doi:10.1016/j.compag.2025.111264
+
+path: E:/harness/aic/vision/data/pigdetect/extract
+train: dev/images
+val: test/images
+
+names:
+  0: pig

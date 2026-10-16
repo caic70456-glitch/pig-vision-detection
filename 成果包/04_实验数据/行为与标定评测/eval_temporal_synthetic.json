@@ -1,0 +1,92 @@
+{
+ "dataset": "synthetic_frames（合成帧序列，验证时序逻辑）",
+ "n_checks": 7,
+ "n_correct": 7,
+ "accuracy": 1.0,
+ "sequences": [
+  {
+   "sequence": "T1_静止不动",
+   "track_features": [
+    {
+     "track_id": 0,
+     "frames": 11,
+     "displacement": 0.0,
+     "speed": 0.0,
+     "area_change": 0.0
+    }
+   ],
+   "distribution_pct": {
+    "standing": 100.0
+   }
+  },
+  {
+   "sequence": "T2_匀速行走",
+   "track_features": [
+    {
+     "track_id": 0,
+     "frames": 11,
+     "displacement": 0.44,
+     "speed": 0.04,
+     "area_change": 0.0
+    }
+   ],
+   "distribution_pct": {
+    "walking": 100.0
+   }
+  },
+  {
+   "sequence": "T3_站立转卧倒",
+   "track_features": [
+    {
+     "track_id": 0,
+     "frames": 11,
+     "displacement": 0.01,
+     "speed": 0.0009,
+     "area_change": -0.271
+    }
+   ],
+   "distribution_pct": {
+    "resting": 100.0
+   }
+  },
+  {
+   "sequence": "T4_持续争斗",
+   "track_features": [
+    {
+     "track_id": 0,
+     "frames": 11,
+     "displacement": 0.252,
+     "speed": 0.0229,
+     "area_change": 0.0
+    },
+    {
+     "track_id": 1,
+     "frames": 11,
+     "displacement": 0.252,
+     "speed": 0.0229,
+     "area_change": 0.0
+    }
+   ],
+   "distribution_pct": {
+    "aggressive": 100.0
+   }
+  },
+  {
+   "sequence": "T5_采食后离开",
+   "track_features": [
+    {
+     "track_id": 0,
+     "frames": 11,
+     "displacement": 0.5566,
+     "speed": 0.0506,
+     "area_change": 0.0
+    }
+   ],
+   "distribution_pct": {
+    "eating": 50.0,
+    "walking": 50.0
+   }
+  }
+ ],
+ "disclaimer": "合成序列只验证时序规则逻辑，不代表真实视频识别精度。"
+}

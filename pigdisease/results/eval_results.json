@@ -1,0 +1,707 @@
+{
+ "metrics": {
+  "n_cases": 15,
+  "top1_accuracy": 0.4,
+  "top3_accuracy": 0.8,
+  "mrr": 0.58,
+  "kb_diseases": 21,
+  "stratified": {
+   "kb_supported(强中证据>=3)": {
+    "n": 11,
+    "top1": 0.4545,
+    "top3": 0.8182
+   },
+   "kb_weak(强中证据<3)": {
+    "n": 4,
+    "top1": 0.25,
+    "top3": 0.75
+   }
+  }
+ },
+ "safety_metrics": {
+  "n": 4,
+  "passed": 4,
+  "accuracy": 1.0
+ },
+ "cases": [
+  {
+   "case": 1,
+   "text": "7日龄内新生仔猪呕吐，随即出现水样腹泻，脱水严重，发病率高",
+   "expect": "猪流行性腹泻",
+   "note": "PED 典型：呕吐后水样腹泻，7日龄内高病死率",
+   "parsed_symptoms": [
+    "呕吐",
+    "水样腹泻",
+    "脱水"
+   ],
+   "parsed_ages": [
+    "7日龄",
+    "新生仔猪"
+   ],
+   "rank": 1,
+   "top": [
+    {
+     "disease": "猪流行性腹泻",
+     "score": 2.252,
+     "confidence": 0.664
+    },
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 0.674,
+     "confidence": 0.272
+    },
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 0.587,
+     "confidence": 0.324
+    },
+    {
+     "disease": "猪霉菌毒素中毒",
+     "score": 0.572,
+     "confidence": 0.198
+    },
+    {
+     "disease": "猪蛔虫病",
+     "score": 0.398,
+     "confidence": 0.102
+    }
+   ]
+  },
+  {
+   "case": 2,
+   "text": "保育猪眼睑和面部水肿，突然死亡，之前有轻度腹泻",
+   "expect": "猪大肠杆菌病",
+   "note": "仔猪水肿病：眼睑水肿+腹泻",
+   "parsed_symptoms": [
+    "水肿",
+    "突然死亡",
+    "腹泻"
+   ],
+   "parsed_ages": [
+    "保育猪"
+   ],
+   "rank": 2,
+   "top": [
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 0.969,
+     "confidence": 0.402
+    },
+    {
+     "disease": "猪大肠杆菌病",
+     "score": 0.813,
+     "confidence": 0.285
+    },
+    {
+     "disease": "猪肺疫",
+     "score": 0.678,
+     "confidence": 0.277
+    },
+    {
+     "disease": "猪支原体肺炎",
+     "score": 0.491,
+     "confidence": 0.18
+    },
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 0.442,
+     "confidence": 0.178
+    }
+   ]
+  },
+  {
+   "case": 3,
+   "text": "仔猪排黄白色糊状稀粪，精神不振，吃奶减少",
+   "expect": "猪大肠杆菌病",
+   "note": "仔猪黄白痢：黄白色粪便",
+   "parsed_symptoms": [
+    "粪便黄白色",
+    "精神沉郁",
+    "腹泻"
+   ],
+   "parsed_ages": [
+    "哺乳仔猪"
+   ],
+   "rank": null,
+   "top": [
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 1.027,
+     "confidence": 0.373
+    },
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 0.674,
+     "confidence": 0.297
+    },
+    {
+     "disease": "猪流行性腹泻",
+     "score": 0.599,
+     "confidence": 0.184
+    },
+    {
+     "disease": "猪瘟",
+     "score": 0.575,
+     "confidence": 0.22
+    },
+    {
+     "disease": "猪丹毒",
+     "score": 0.474,
+     "confidence": 0.145
+    }
+   ]
+  },
+  {
+   "case": 4,
+   "text": "保育猪体温升高，关节肿胀跛行，呼吸困难，耳尖发绀",
+   "expect": "副猪嗜血杆菌病",
+   "note": "格拉瑟病：多发性浆膜炎，关节肿胀为强证据",
+   "parsed_symptoms": [
+    "关节肿胀",
+    "发热",
+    "呼吸困难",
+    "耳尖发紫",
+    "跛行"
+   ],
+   "parsed_ages": [
+    "保育猪"
+   ],
+   "rank": 1,
+   "top": [
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 1.013,
+     "confidence": 0.479
+    },
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 0.811,
+     "confidence": 0.378
+    },
+    {
+     "disease": "猪链球菌病",
+     "score": 0.78,
+     "confidence": 0.377
+    },
+    {
+     "disease": "猪大肠杆菌病",
+     "score": 0.755,
+     "confidence": 0.299
+    },
+    {
+     "disease": "猪支原体肺炎",
+     "score": 0.631,
+     "confidence": 0.264
+    }
+   ]
+  },
+  {
+   "case": 5,
+   "text": "育肥猪长期干咳，生长迟缓，被毛粗乱，体温不高",
+   "expect": "猪支原体肺炎",
+   "note": "气喘病：干咳+生长迟缓+被毛粗乱，体温通常不高",
+   "parsed_symptoms": [
+    "咳嗽",
+    "生长迟缓",
+    "被毛粗乱"
+   ],
+   "parsed_ages": [
+    "育肥猪"
+   ],
+   "rank": 1,
+   "top": [
+    {
+     "disease": "猪支原体肺炎",
+     "score": 1.377,
+     "confidence": 0.501
+    },
+    {
+     "disease": "猪增生性肠炎",
+     "score": 0.632,
+     "confidence": 0.143
+    },
+    {
+     "disease": "猪圆环病毒病",
+     "score": 0.625,
+     "confidence": 0.173
+    },
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 0.595,
+     "confidence": 0.264
+    },
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 0.446,
+     "confidence": 0.171
+    }
+   ]
+  },
+  {
+   "case": 6,
+   "text": "母猪流产产死胎，仔猪呼吸困难，耳部发绀，断奶后仔猪消瘦",
+   "expect": "猪繁殖与呼吸综合征",
+   "note": "蓝耳病：繁殖障碍+呼吸困难+发绀",
+   "parsed_symptoms": [
+    "呼吸困难",
+    "死胎木乃伊胎",
+    "流产",
+    "消瘦",
+    "耳尖发紫"
+   ],
+   "parsed_ages": [
+    "保育猪",
+    "母猪"
+   ],
+   "rank": 1,
+   "top": [
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 1.508,
+     "confidence": 0.727
+    },
+    {
+     "disease": "猪大肠杆菌病",
+     "score": 0.912,
+     "confidence": 0.367
+    },
+    {
+     "disease": "猪细小病毒病",
+     "score": 0.836,
+     "confidence": 0.238
+    },
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 0.633,
+     "confidence": 0.25
+    },
+    {
+     "disease": "猪链球菌病",
+     "score": 0.58,
+     "confidence": 0.28
+    }
+   ]
+  },
+  {
+   "case": 7,
+   "text": "仔猪腹泻，粪便带血和黏液，消瘦，生长缓慢",
+   "expect": "猪流行性腹泻",
+   "note": "肠道病症状群（PED 为主要候选之一）",
+   "parsed_symptoms": [
+    "消瘦",
+    "生长迟缓",
+    "粪便含黏液",
+    "粪便带血",
+    "腹泻"
+   ],
+   "parsed_ages": [],
+   "rank": 2,
+   "top": [
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 1.696,
+     "confidence": 0.655
+    },
+    {
+     "disease": "猪流行性腹泻",
+     "score": 0.963,
+     "confidence": 0.302
+    },
+    {
+     "disease": "猪增生性肠炎",
+     "score": 0.826,
+     "confidence": 0.222
+    },
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 0.805,
+     "confidence": 0.378
+    },
+    {
+     "disease": "猪大肠杆菌病",
+     "score": 0.565,
+     "confidence": 0.245
+    }
+   ]
+  },
+  {
+   "case": 8,
+   "text": "猪只出现皮肤红斑疹块，呈方形，体温升高，关节疼痛跛行",
+   "expect": "猪丹毒",
+   "note": "猪丹毒：方形红斑疹块为特征",
+   "parsed_symptoms": [
+    "关节疼痛",
+    "发热",
+    "红斑疹块",
+    "跛行"
+   ],
+   "parsed_ages": [],
+   "rank": 1,
+   "top": [
+    {
+     "disease": "猪丹毒",
+     "score": 0.923,
+     "confidence": 0.3
+    },
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 0.759,
+     "confidence": 0.394
+    },
+    {
+     "disease": "猪瘟",
+     "score": 0.403,
+     "confidence": 0.181
+    },
+    {
+     "disease": "猪链球菌病",
+     "score": 0.385,
+     "confidence": 0.192
+    },
+    {
+     "disease": "猪支原体肺炎",
+     "score": 0.304,
+     "confidence": 0.15
+    }
+   ]
+  },
+  {
+   "case": 9,
+   "text": "仔猪出现神经症状，转圈抽搐，四肢划水，体温升高",
+   "expect": "猪链球菌病",
+   "note": "链球菌性脑膜炎：神经症状",
+   "parsed_symptoms": [
+    "发热",
+    "神经症状"
+   ],
+   "parsed_ages": [],
+   "rank": 2,
+   "top": [
+    {
+     "disease": "猪支原体肺炎",
+     "score": 0.798,
+     "confidence": 0.305
+    },
+    {
+     "disease": "猪链球菌病",
+     "score": 0.615,
+     "confidence": 0.262
+    },
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 0.586,
+     "confidence": 0.259
+    },
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 0.578,
+     "confidence": 0.255
+    },
+    {
+     "disease": "猪伪狂犬病",
+     "score": 0.492,
+     "confidence": 0.13
+    }
+   ]
+  },
+  {
+   "case": 10,
+   "text": "育肥猪高热，皮肤有出血点，精神沉郁，先便秘后腹泻",
+   "expect": "猪瘟",
+   "note": "猪瘟：出血点+先便秘后腹泻",
+   "parsed_symptoms": [
+    "先便秘后腹泻",
+    "出血点",
+    "发热",
+    "精神沉郁"
+   ],
+   "parsed_ages": [
+    "育肥猪"
+   ],
+   "rank": 3,
+   "top": [
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 0.904,
+     "confidence": 0.404
+    },
+    {
+     "disease": "猪丹毒",
+     "score": 0.869,
+     "confidence": 0.233
+    },
+    {
+     "disease": "猪瘟",
+     "score": 0.826,
+     "confidence": 0.314
+    },
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 0.641,
+     "confidence": 0.245
+    },
+    {
+     "disease": "猪支原体肺炎",
+     "score": 0.37,
+     "confidence": 0.15
+    }
+   ]
+  },
+  {
+   "case": 11,
+   "text": "断奶仔猪消瘦，呼吸困难，皮肤可见出血点和紫斑，生长迟缓",
+   "expect": "猪圆环病毒病",
+   "note": "圆环病毒相关疾病：消瘦+呼吸困难",
+   "parsed_symptoms": [
+    "出血点",
+    "呼吸困难",
+    "消瘦",
+    "生长迟缓"
+   ],
+   "parsed_ages": [
+    "保育猪"
+   ],
+   "rank": 5,
+   "top": [
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 1.073,
+     "confidence": 0.421
+    },
+    {
+     "disease": "猪大肠杆菌病",
+     "score": 0.918,
+     "confidence": 0.352
+    },
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 0.803,
+     "confidence": 0.356
+    },
+    {
+     "disease": "猪流行性腹泻",
+     "score": 0.655,
+     "confidence": 0.183
+    },
+    {
+     "disease": "猪圆环病毒病",
+     "score": 0.579,
+     "confidence": 0.167
+    }
+   ]
+  },
+  {
+   "case": 12,
+   "text": "母猪发热流产，仔猪出现神经症状和呼吸困难，死亡率高",
+   "expect": "猪伪狂犬病",
+   "note": "伪狂犬：流产+仔猪神经症状",
+   "parsed_symptoms": [
+    "发热",
+    "呼吸困难",
+    "流产",
+    "神经症状"
+   ],
+   "parsed_ages": [
+    "母猪"
+   ],
+   "rank": 3,
+   "top": [
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 1.626,
+     "confidence": 0.692
+    },
+    {
+     "disease": "猪链球菌病",
+     "score": 1.085,
+     "confidence": 0.461
+    },
+    {
+     "disease": "猪伪狂犬病",
+     "score": 1.003,
+     "confidence": 0.265
+    },
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 0.893,
+     "confidence": 0.394
+    },
+    {
+     "disease": "猪肺疫",
+     "score": 0.885,
+     "confidence": 0.361
+    }
+   ]
+  },
+  {
+   "case": 13,
+   "text": "猪只采食霉变饲料后呕吐腹泻，生长迟缓，部分母猪流产",
+   "expect": "猪霉菌毒素中毒",
+   "note": "霉菌毒素：有霉变饲料暴露史",
+   "parsed_symptoms": [
+    "呕吐",
+    "流产",
+    "生长迟缓",
+    "腹泻"
+   ],
+   "parsed_ages": [
+    "母猪"
+   ],
+   "rank": 3,
+   "top": [
+    {
+     "disease": "猪流行性腹泻",
+     "score": 1.885,
+     "confidence": 0.536
+    },
+    {
+     "disease": "猪沙门氏菌病",
+     "score": 1.201,
+     "confidence": 0.444
+    },
+    {
+     "disease": "猪霉菌毒素中毒",
+     "score": 0.997,
+     "confidence": 0.271
+    },
+    {
+     "disease": "猪增生性肠炎",
+     "score": 0.857,
+     "confidence": 0.222
+    },
+    {
+     "disease": "猪圆环病毒病",
+     "score": 0.692,
+     "confidence": 0.216
+    }
+   ]
+  },
+  {
+   "case": 14,
+   "text": "保育猪突然死亡，口鼻流出泡沫状液体，咽喉部肿胀，呼吸困难",
+   "expect": "猪肺疫",
+   "note": "猪肺疫：最急性型，咽喉肿胀",
+   "parsed_symptoms": [
+    "口鼻泡沫",
+    "呼吸困难",
+    "咽喉肿胀",
+    "突然死亡"
+   ],
+   "parsed_ages": [
+    "保育猪"
+   ],
+   "rank": 1,
+   "top": [
+    {
+     "disease": "猪肺疫",
+     "score": 1.099,
+     "confidence": 0.449
+    },
+    {
+     "disease": "副猪嗜血杆菌病",
+     "score": 0.814,
+     "confidence": 0.361
+    },
+    {
+     "disease": "猪大肠杆菌病",
+     "score": 0.813,
+     "confidence": 0.308
+    },
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 0.445,
+     "confidence": 0.221
+    },
+    {
+     "disease": "猪链球菌病",
+     "score": 0.439,
+     "confidence": 0.22
+    }
+   ]
+  },
+  {
+   "case": 15,
+   "text": "育肥猪高热，呼吸困难，犬坐姿势，鼻流脓性分泌物，胸膜摩擦音",
+   "expect": "猪传染性胸膜肺炎",
+   "note": "传染性胸膜肺炎：犬坐+脓性鼻液",
+   "parsed_symptoms": [
+    "发热",
+    "呼吸困难",
+    "犬坐姿势",
+    "胸膜摩擦音",
+    "脓性鼻液"
+   ],
+   "parsed_ages": [
+    "育肥猪"
+   ],
+   "rank": null,
+   "top": [
+    {
+     "disease": "猪支原体肺炎",
+     "score": 1.267,
+     "confidence": 0.521
+    },
+    {
+     "disease": "猪繁殖与呼吸综合征",
+     "score": 1.128,
+     "confidence": 0.503
+    },
+    {
+     "disease": "猪链球菌病",
+     "score": 0.933,
+     "confidence": 0.422
+    },
+    {
+     "disease": "猪肺疫",
+     "score": 0.762,
+     "confidence": 0.325
+    },
+    {
+     "disease": "猪大肠杆菌病",
+     "score": 0.458,
+     "confidence": 0.183
+    }
+   ]
+  }
+ ],
+ "safety_cases": [
+  {
+   "text": "仔猪腹泻，之前用了氯霉素和呋喃唑酮",
+   "expect_block": [
+    "氯霉素",
+    "呋喃唑酮"
+   ],
+   "got": [
+    "氯霉素",
+    "呋喃唑酮"
+   ],
+   "pass": true
+  },
+  {
+   "text": "育肥猪咳嗽，建议用诺氟沙星治疗",
+   "expect_block": [
+    "诺氟沙星"
+   ],
+   "got": [
+    "诺氟沙星"
+   ],
+   "pass": true
+  },
+  {
+   "text": "猪只发热，使用克伦特罗促进生长",
+   "expect_block": [
+    "克伦特罗"
+   ],
+   "got": [
+    "克伦特罗"
+   ],
+   "pass": true
+  },
+  {
+   "text": "保育猪关节肿胀，用阿莫西林治疗",
+   "expect_block": [],
+   "got": [],
+   "pass": true
+  }
+ ]
+}
