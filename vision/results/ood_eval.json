@@ -1,0 +1,86 @@
+{
+  "model": "pig-detector-yolov8n-int8.onnx",
+  "conf": 0.25,
+  "iou": 0.45,
+  "in_domain": {
+    "images": 30,
+    "precision": 0.9615384615384616,
+    "recall": 0.9202453987730062,
+    "avg_conf": 0.8390907372543162,
+    "gt_boxes": 652
+  },
+  "ood": [
+    {
+      "file": "ood_000.jpg",
+      "boxes": 3,
+      "avg_conf": 0.8261481324831644,
+      "max_conf": 0.9282734990119934
+    },
+    {
+      "file": "ood_001.jpg",
+      "boxes": 3,
+      "avg_conf": 0.5006410578886668,
+      "max_conf": 0.8496449589729309
+    },
+    {
+      "file": "ood_002.jpg",
+      "boxes": 17,
+      "avg_conf": 0.5673180204980514,
+      "max_conf": 0.9493877291679382
+    },
+    {
+      "file": "ood_003.jpg",
+      "boxes": 4,
+      "avg_conf": 0.7747264578938484,
+      "max_conf": 0.9846090078353882
+    },
+    {
+      "file": "ood_004.jpg",
+      "boxes": 1,
+      "avg_conf": 0.5070772171020508,
+      "max_conf": 0.5070772171020508
+    },
+    {
+      "file": "ood_005.jpg",
+      "boxes": 4,
+      "avg_conf": 0.36006516963243484,
+      "max_conf": 0.45252540707588196
+    },
+    {
+      "file": "ood_006.jpg",
+      "boxes": 23,
+      "avg_conf": 0.3707464052283246,
+      "max_conf": 0.7881267070770264
+    },
+    {
+      "file": "ood_007.jpg",
+      "boxes": 18,
+      "avg_conf": 0.8223111960623,
+      "max_conf": 0.9762191772460938
+    },
+    {
+      "file": "ood_008.jpg",
+      "boxes": 3,
+      "avg_conf": 0.6749996642271677,
+      "max_conf": 0.9314178228378296
+    },
+    {
+      "file": "ood_009.jpg",
+      "boxes": 2,
+      "avg_conf": 0.6910877227783203,
+      "max_conf": 0.7980676889419556
+    },
+    {
+      "file": "ood_010.jpg",
+      "boxes": 4,
+      "avg_conf": 0.6405539810657501,
+      "max_conf": 0.9101523160934448
+    },
+    {
+      "file": "ood_011.jpg",
+      "boxes": 7,
+      "avg_conf": 0.5116446741989681,
+      "max_conf": 0.7318578958511353
+    }
+  ]
+}

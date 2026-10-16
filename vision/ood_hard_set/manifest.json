@@ -1,0 +1,163 @@
+{
+  "note": "域外泛化压力测试集：自然光/平视/户外真实猪照片；源自 Wikimedia Commons，使用时按各条 license 署名",
+  "intent": "模型训练域=栏舍固定机位俯拍；本集评估跨场景泛化",
+  "count": 12,
+  "items": [
+    {
+      "title": "File:Pigs at the pen.jpg",
+      "category": "Category:Pigs",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Pigs_at_the_pen.jpg/960px-Pigs_at_the_pen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC0",
+      "artist": "Sankuba Damasus Erasong",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Pigs_at_the_pen.jpg",
+      "file": "ood_000.jpg",
+      "size": [
+        960,
+        1280
+      ]
+    },
+    {
+      "title": "File:Walking the Pig - Flickr - AlphaTangoBravo - Adam Baker.jpg",
+      "category": "Category:Pigs",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Walking_the_Pig_-_Flickr_-_AlphaTangoBravo_-_Adam_Baker.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC BY 2.0",
+      "artist": "Adam Baker from Houston, TX",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Walking_the_Pig_-_Flickr_-_AlphaTangoBravo_-_Adam_Baker.jpg",
+      "file": "ood_001.jpg",
+      "size": [
+        800,
+        532
+      ]
+    },
+    {
+      "title": "File:An elderly man sits outside, cradling a small piglet gently in his arms.jpg",
+      "category": "Category:Pigs",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/An_elderly_man_sits_outside%2C_cradling_a_small_piglet_gently_in_his_arms.jpg/960px-An_elderly_man_sits_outside%2C_cradling_a_small_piglet_gently_in_his_arms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "artist": "Shixart1985",
+      "descurl": "https://commons.wikimedia.org/wiki/File:An_elderly_man_sits_outside,_cradling_a_small_piglet_gently_in_his_arms.jpg",
+      "file": "ood_002.jpg",
+      "size": [
+        960,
+        1438
+      ]
+    },
+    {
+      "title": "File:Piglets with Sow in Pen.jpg",
+      "category": "Category:Pigs",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Piglets_with_Sow_in_Pen.jpg/960px-Piglets_with_Sow_in_Pen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "artist": "Bassey Eno Charlie",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Piglets_with_Sow_in_Pen.jpg",
+      "file": "ood_003.jpg",
+      "size": [
+        960,
+        528
+      ]
+    },
+    {
+      "title": "File:Piglets with Sow in Pen (83335).jpg",
+      "category": "Category:Pigs",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Piglets_with_Sow_in_Pen_%2883335%29.jpg/960px-Piglets_with_Sow_in_Pen_%2883335%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "artist": "Bassey Eno Charlie",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Piglets_with_Sow_in_Pen_(83335).jpg",
+      "file": "ood_004.jpg",
+      "size": [
+        960,
+        720
+      ]
+    },
+    {
+      "title": "File:Une cochonne.jpg",
+      "category": "Category:Pigs",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Une_cochonne.jpg/960px-Une_cochonne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "artist": "Lucia236",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Une_cochonne.jpg",
+      "file": "ood_005.jpg",
+      "size": [
+        960,
+        1761
+      ]
+    },
+    {
+      "title": "File:African Pig on Baler.jpg",
+      "category": "Category:Pigs",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/African_Pig_on_Baler.jpg/960px-African_Pig_on_Baler.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "artist": "Ibrahim Achiri",
+      "descurl": "https://commons.wikimedia.org/wiki/File:African_Pig_on_Baler.jpg",
+      "file": "ood_006.jpg",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "title": "File:Mes porcelets dans ma porcherie.jpg",
+      "category": "Category:Sus scrofa domesticus",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Mes_porcelets_dans_ma_porcherie.jpg/960px-Mes_porcelets_dans_ma_porcherie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "artist": "Vivradidier",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Mes_porcelets_dans_ma_porcherie.jpg",
+      "file": "ood_007.jpg",
+      "size": [
+        960,
+        720
+      ]
+    },
+    {
+      "title": "File:Piggyoinkoink.jpg",
+      "category": "Category:Sus scrofa domesticus",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Piggyoinkoink.jpg/960px-Piggyoinkoink.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC0",
+      "artist": "Shlumble",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Piggyoinkoink.jpg",
+      "file": "ood_008.jpg",
+      "size": [
+        960,
+        1275
+      ]
+    },
+    {
+      "title": "File:Cochons sauvages.jpg",
+      "category": "Category:Sus scrofa domesticus",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Cochons_sauvages.jpg/960px-Cochons_sauvages.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "artist": "DEFI-Écologique",
+      "descurl": "https://commons.wikimedia.org/wiki/File:Cochons_sauvages.jpg",
+      "file": "ood_009.jpg",
+      "size": [
+        960,
+        720
+      ]
+    },
+    {
+      "title": "File:“Piggy Resolute\" Famed Survior of the 2008 Sichuan Earthquake (4286805604).jpg",
+      "category": "Category:Sus scrofa domesticus",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/%E2%80%9CPiggy_Resolute%22_Famed_Survior_of_the_2008_Sichuan_Earthquake_%284286805604%29.jpg/960px-%E2%80%9CPiggy_Resolute%22_Famed_Survior_of_the_2008_Sichuan_Earthquake_%284286805604%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "artist": "David and Jessie Cowhig from Alexandria, Virginia, USA",
+      "descurl": "https://commons.wikimedia.org/wiki/File:%E2%80%9CPiggy_Resolute%22_Famed_Survior_of_the_2008_Sichuan_Earthquake_(4286805604).jpg",
+      "file": "ood_010.jpg",
+      "size": [
+        960,
+        968
+      ]
+    },
+    {
+      "title": "File:“Piggy Resolute\" Famed Survior of the 2008 Sichuan Earthquake (4286801110).jpg",
+      "category": "Category:Sus scrofa domesticus",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/%E2%80%9CPiggy_Resolute%22_Famed_Survior_of_the_2008_Sichuan_Earthquake_%284286801110%29.jpg/960px-%E2%80%9CPiggy_Resolute%22_Famed_Survior_of_the_2008_Sichuan_Earthquake_%284286801110%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "artist": "David and Jessie Cowhig from Alexandria, Virginia, USA",
+      "descurl": "https://commons.wikimedia.org/wiki/File:%E2%80%9CPiggy_Resolute%22_Famed_Survior_of_the_2008_Sichuan_Earthquake_(4286801110).jpg",
+      "file": "ood_011.jpg",
+      "size": [
+        960,
+        935
+      ]
+    }
+  ]
+}
