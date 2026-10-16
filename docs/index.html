@@ -33,13 +33,14 @@
 <div class="wrap">
   <h1>🐷 猪只视觉检测系统</h1>
   <div class="sub">第八届全球校园人工智能算法精英大赛 · AI农业算法主题赛 · 赛题一（农业视觉目标检测与识别）<br>
-  模型：YOLOv8n 自训（PigBench）→ INT8 动态量化（3.2MB） · 浏览器端推理 · 无需服务器</div>
+  模型：YOLOv8n 自训（PigBench）→ INT8 动态量化（3.2MB） · 浏览器端推理 · 无需服务器<br>
+  <b style="color:#fbbf24">适用场景：栏舍固定机位俯拍监控画面</b>（训练数据分布），平视/远景/户外场景泛化有限</div>
 
   <div class="card">
     <div class="row">
       <button id="loadBtn" disabled>模型加载中…</button>
       <button id="demoBtn" disabled style="background:#38bdf8;color:#082f49">🐷 示例图片</button>
-      <label class="conf-row">置信度阈值 <input type="range" id="conf" min="0.05" max="0.9" step="0.05" value="0.25"> <span id="confVal">0.25</span></label>
+      <label class="conf-row">置信度阈值 <input type="range" id="conf" min="0.10" max="0.9" step="0.05" value="0.25"> <span id="confVal">0.25</span></label>
       <span id="status"></span>
     </div>
   </div>
@@ -56,7 +57,16 @@
     <div class="stat"><div class="v" id="sSize">-</div><div class="k">图片尺寸</div></div>
   </div>
 
-  <div class="card" id="canvasBox" style="display:none"><canvas id="cv"></canvas></div>
+  <div class="card" id="canvasBox" style="display:none">
+    <canvas id="cv"></canvas>
+    <div style="margin-top:8px;font-size:12px;color:#94a3b8">
+      框颜色含义：<b style="color:#22c55e">绿色 = 高置信（≥0.5，可靠）</b> ·
+      <b style="color:#f59e0b">橙色 = 中置信（0.3–0.5，存疑）</b> ·
+      <b style="color:#ef4444">红色虚线 = 低置信（&lt;0.3，大概率误检）</b>
+    </div>
+  </div>
+
+  <div class="card" id="warn" style="display:none;border:1px solid #f59e0b;background:#422006"></div>
 
   <footer>
     边缘端完整链路（行为分析 / SQLite 落库 / 传感器联动）见仓库 edge/ 目录 ·
@@ -149,19 +159,24 @@ async function handle(file) {
     const out = await session.run({ images: tensor });
     const ms = performance.now() - t0;
 
-    const d = out.output0.data, N = 8400, C = 5;
+    const d = out.output0.data, N = 8400;
     const confThr = parseFloat($('conf').value);
     let boxes = [];
     for (let i = 0; i < N; i++) {
       const score = d[4 * N + i];
-      if (score < confThr) continue;
+      if (!Number.isFinite(score) || score < confThr) continue;
       const cx = d[i], cy = d[N + i], w = d[2 * N + i], h = d[3 * N + i];
+      if (![cx, cy, w, h].every(Number.isFinite) || w <= 0 || h <= 0) continue;
       // 640 空间 → 原图空间
-      const x1 = (cx - w/2 - dx) / scale, y1 = (cy - h/2 - dy) / scale;
-      const x2 = (cx + w/2 - dx) / scale, y2 = (cy + h/2 - dy) / scale;
-      boxes.push([Math.max(0,x1), Math.max(0,y1), Math.min(img.width,x2), Math.min(img.height,y2), score]);
+      let x1 = (cx - w/2 - dx) / scale, y1 = (cy - h/2 - dy) / scale;
+      let x2 = (cx + w/2 - dx) / scale, y2 = (cy + h/2 - dy) / scale;
+      // 裁剪到原图边界，丢弃无效框
+      x1 = Math.max(0, Math.min(img.width, x1));  y1 = Math.max(0, Math.min(img.height, y1));
+      x2 = Math.max(0, Math.min(img.width, x2));  y2 = Math.max(0, Math.min(img.height, y2));
+      if (x2 <= x1 || y2 <= y1) continue;
+      boxes.push([x1, y1, x2, y2, score]);
     }
-    boxes = nms(boxes);
+    boxes = nms(boxes, 0.45);
 
     // 绘制
     const cv = $('cv'), ctx = cv.getContext('2d');
@@ -170,11 +185,15 @@ async function handle(file) {
     ctx.lineWidth = Math.max(2, img.width / 400);
     ctx.font = `${Math.max(14, img.width/50)}px sans-serif`;
     for (const [x1,y1,x2,y2,s] of boxes) {
-      ctx.strokeStyle = '#22c55e';
+      // 按置信度分色：绿=可靠，橙=存疑，红虚线=大概率误检
+      const col = s >= 0.5 ? '#22c55e' : (s >= 0.3 ? '#f59e0b' : '#ef4444');
+      ctx.strokeStyle = col;
+      ctx.setLineDash(s < 0.3 ? [8, 6] : []);
       ctx.strokeRect(x1, y1, x2-x1, y2-y1);
+      ctx.setLineDash([]);
       const label = `pig ${s.toFixed(2)}`;
       const tw = ctx.measureText(label).width;
-      ctx.fillStyle = '#22c55e';
+      ctx.fillStyle = col;
       ctx.fillRect(x1, y1 - 1.4*parseInt(ctx.font), tw + 8, 1.4*parseInt(ctx.font));
       ctx.fillStyle = '#052e16';
       ctx.fillText(label, x1 + 4, y1 - 4);
@@ -188,6 +207,17 @@ async function handle(file) {
     $('sSize').textContent = `${img.width}×${img.height}`;
     $('stats').style.display = 'grid';
     $('canvasBox').style.display = 'block';
+
+    // 域外/低置信提示
+    const warn = $('warn');
+    if (boxes.length === 0 || avg < 0.5) {
+      warn.innerHTML = boxes.length === 0
+        ? '⚠ <b>未检出任何目标。</b>如果画面中确实有猪，说明该图的拍摄方式与模型训练数据差异较大。本模型训练于<b>栏舍固定机位俯拍监控</b>画面（PigBench 测试集 Precision 0.95 / Recall 0.90），对平视、远景、户外泥地等场景泛化较弱。'
+        : `⚠ <b>平均置信度仅 ${avg.toFixed(3)}，疑似“域外画面”。</b>本模型训练于<b>栏舍固定机位俯拍监控</b>画面（PigBench 测试集 Precision 0.95 / Recall 0.90）。当前图片的视角/场景与训练分布不一致，模型会大量输出低分候选框和误检 —— 这属于训练数据覆盖不足，<b>调 NMS 或置信度阈值无法根治</b>。建议改用栏舍俯拍画面，或补充现场数据做微调。`;
+      warn.style.display = 'block';
+    } else {
+      warn.style.display = 'none';
+    }
     status(`完成：检出 ${boxes.length} 头猪`);
     URL.revokeObjectURL(img.src);
   };
