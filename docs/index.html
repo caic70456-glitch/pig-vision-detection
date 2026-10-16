@@ -38,6 +38,7 @@
   <div class="card">
     <div class="row">
       <button id="loadBtn" disabled>模型加载中…</button>
+      <button id="demoBtn" disabled style="background:#38bdf8;color:#082f49">🐷 示例图片</button>
       <label class="conf-row">置信度阈值 <input type="range" id="conf" min="0.05" max="0.9" step="0.05" value="0.25"> <span id="confVal">0.25</span></label>
       <span id="status"></span>
     </div>
@@ -77,6 +78,7 @@ const status = t => $('status').textContent = t;
     session = await ort.InferenceSession.create(MODEL_URL, { executionProviders: ['wasm'] });
     $('loadBtn').disabled = false;
     $('loadBtn').textContent = '模型已就绪 ✓';
+    $('demoBtn').disabled = false;
     status('可以上传图片了');
   } catch (e) {
     status('模型加载失败: ' + e.message);
@@ -91,6 +93,12 @@ $('drop').ondragleave = () => $('drop').classList.remove('over');
 $('drop').ondrop = e => { e.preventDefault(); $('drop').classList.remove('over'); if (e.dataTransfer.files[0]) handle(e.dataTransfer.files[0]); };
 $('file').onchange = e => { if (e.target.files[0]) handle(e.target.files[0]); };
 $('conf').oninput = () => $('confVal').textContent = $('conf').value;
+
+// 示例图片按钮：直接加载 docs/sample.jpg 跑推理
+$('demoBtn').onclick = async () => {
+  const blob = await (await fetch('sample.jpg')).blob();
+  handle(new File([blob], 'sample.jpg', { type: 'image/jpeg' }));
+};
 
 // ---------- letterbox 预处理 ----------
 function letterbox(img) {
